@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL 100 HUB | Ciencia, Alto Rendimiento & Estudio Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel, Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0a0c0b',
+                        obsidianLight: '#111513',
+                        obsidianCard: '#151a17',
+                        boltGreen: '#1b4332',
+                        boltGreenLight: '#2d6a4f',
+                        boltAccent: '#40916c',
+                        oldGold: '#d4af37',
+                        oldGoldLight: '#e6c65a',
+                        parchment: '#e8e6df'
+                    },
+                    fontFamily: {
+                        serifTitle: ['Cinzel', 'serif'],
+                        serifElegant: ['Playfair Display', 'serif'],
+                        sansBody: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0c0b;
+            color: #e8e6df;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Sutil textura radial de lujo oscuro */
+        .bg-luxury-mesh {
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(27, 67, 50, 0.28) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                linear-gradient(180deg, #0a0c0b 0%, #0f1411 100%);
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(27, 67, 50, 0.2);
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.65);
+            box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #b58e18 100%);
+            color: #0a0c0b;
+            font-weight: 700;
+            transition: all 0.25s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+            filter: brightness(1.08);
+        }
+        .btn-bolt {
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: #e8e6df;
+            transition: all 0.25s ease;
+        }
+        .btn-bolt:hover {
+            transform: translateY(-2px);
+            border-color: #d4af37;
+            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.4);
+        }
+        /* Custom range slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: #1b4332;
+            height: 8px;
+            border-radius: 999px;
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            cursor: pointer;
+            border: 2px solid #0a0c0b;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0c0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b4332;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="bg-luxury-mesh min-h-screen flex flex-col selection:bg-oldGold selection:text-obsidian">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-boltGreen/90 border-b border-oldGold/30 text-xs sm:text-sm py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-6">
+            <span class="inline-flex items-center gap-1.5 font-medium text-parchment">
+                <i class="fa-solid fa-shield-halved text-oldGold"></i>
+                <span>Consultoría Científica & Digital <strong>100% Confidencial</strong> en toda Bolivia</span>
+            </span>
+            <span class="hidden md:inline text-oldGold/50">|</span>
+            <span class="inline-flex items-center gap-1.5 text-oldGoldLight font-semibold">
+                <i class="fa-solid fa-qrcode"></i>
+                <span>Entregas Inmediatas vía Simple QR (Bs.)</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- STICKY NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/90 border-b border-oldGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Identity -->
+            <button onclick="switchTab('servicios')" class="flex items-center gap-3 text-left group focus:outline-none">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-boltGreen to-obsidian border border-oldGold/60 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                    <span class="font-serifTitle font-bold text-oldGold text-lg tracking-tighter">100</span>
+                </div>
+                <div>
+                    <span class="font-serifTitle font-bold text-lg sm:text-xl tracking-wider text-parchment block leading-none">
+                        AL 100 <span class="text-oldGold">HUB</span>
+                    </span>
+                    <span class="text-[11px] uppercase tracking-widest text-emerald-400/90 font-medium block mt-1">
+                        Ciencia · Estrategia · Estudio Digital
+                    </span>
+                </div>
+            </button>
+
+            <!-- Desktop Navigation Tabs -->
+            <nav class="hidden lg:flex items-center gap-2 bg-obsidianLight/90 p-1.5 rounded-2xl border border-white/10">
+                <button onclick="switchTab('servicios')" id="nav-servicios" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2 bg-boltGreen text-oldGold border border-oldGold/40">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>1. Servicios High-Ticket</span>
+                </button>
+                <button onclick="switchTab('tienda')" id="nav-tienda" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-book-medical"></i>
+                    <span>2. Tienda PDF 24/7</span>
+                    <span class="bg-oldGold/20 text-oldGold text-[10px] px-2 py-0.5 rounded-full border border-oldGold/40">QR</span>
+                </button>
+                <button onclick="switchTab('blog')" id="nav-blog" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>3. Blog + Autopublicidad</span>
+                </button>
+                <button onclick="switchTab('bolt')" id="nav-bolt" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-amber-300/90 hover:text-oldGold border border-transparent">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    <span>4. Modo Dueño (Meta Bolt)</span>
+                </button>
+            </nav>
+
+            <!-- Quick CTA / WhatsApp Status -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="openDirectWhatsApp('Hola AL 100 HUB, vengo de su página web y quiero cotizar un servicio o guía.')" class="btn-gold px-4 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Contacto Directo</span>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-obsidianCard border border-oldGold/30 text-oldGold focus:outline-none">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-obsidianCard border-b border-oldGold/30 px-4 pt-3 pb-5 space-y-2">
+            <button onclick="switchTab('servicios'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm flex items-center justify-between bg-boltGreen/40 text-oldGold border border-oldGold/30">
+                <span><i class="fa-solid fa-briefcase mr-2"></i> 1. Agencia & Servicios High-Ticket</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+            <button onclick="switchTab('tienda'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm flex items-center justify-between bg-obsidianLight text-gray-200 border border-white/5">
+                <span><i class="fa-solid fa-book-medical mr-2 text-emerald-400"></i> 2. Tienda Digital 24/7 (Cobro QR)</span>
+                <span class="text-xs bg-oldGold text-obsidian px-2 py-0.5 rounded font-bold">Pasivo</span>
+            </button>
+            <button onclick="switchTab('blog'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm flex items-center justify-between bg-obsidianLight text-gray-200 border border-white/5">
+                <span><i class="fa-solid fa-newspaper mr-2 text-blue-400"></i> 3. Blog Gratuito & Autopublicidad</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+            <button onclick="switchTab('bolt'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm flex items-center justify-between bg-amber-950/40 text-oldGold border border-oldGold/40">
+                <span><i class="fa-solid fa-motorcycle mr-2"></i> 4. Panel Dueño / Meta Yamaha Bolt</span>
+                <span class="text-xs underline">Configurar</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+        <!-- ===================================================================== -->
+        <!-- MÓDULO 1: INICIO & CATÁLOGO DE SERVICIOS HIGH-TICKET (AGENCIA ANÓNIMA) -->
+        <!-- ===================================================================== -->
+        <section id="tab-servicios" class="tab-content space-y-14">
+            
+            <!-- HERO SECTION -->
+            <div class="relative rounded-3xl overflow-hidden gold-border-glow bg-gradient-to-br from-obsidianCard via-obsidian to-boltGreen/40 p-6 sm:p-12 lg:p-16">
+                <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-boltGreen/20 blur-3xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-boltGreen/60 border border-oldGold/40 text-oldGold text-xs font-semibold tracking-wider uppercase">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            División de Inteligencia Biomédica & Producción Digital
+                        </div>
+                        <h1 class="font-serifElegant text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-parchment">
+                            Rigor Científico, <span class="gold-gradient-text italic">Síntesis Visual</span> & Alto Rendimiento.
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                            Soluciones de élite para investigadores de salud, tesistas, profesionales y marcas comerciales en <strong>La Paz, Cochabamba, Santa Cruz y Oruro</strong>. Transformamos meses de trabajo pesado en entregables impecables en 48 horas con confidencialidad absoluta.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#catalogo-servicios" class="btn-gold px-6 py-3.5 rounded-xl text-sm sm:text-base flex items-center gap-2">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Explorar Servicios Profesionales</span>
+                            </a>
+                            <button onclick="switchTab('tienda')" class="btn-bolt px-6 py-3.5 rounded-xl text-sm sm:text-base font-semibold flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group text-oldGold"></i>
+                                <span>Ver Compendios & Guías PDF (Desde 30 Bs)</span>
+                            </button>
+                        </div>
+                        <!-- Trust Metrics -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                            <div>
+                                <p class="font-serifTitle text-xl sm:text-2xl font-bold text-oldGold">+100K</p>
+                                <p class="text-xs text-gray-400">Impacto & Retención Digital</p>
+                            </div>
+                            <div>
+                                <p class="font-serifTitle text-xl sm:text-2xl font-bold text-emerald-400">100% Anónimo</p>
+                                <p class="text-xs text-gray-400">Sigilo Académico Garantizado</p>
+                            </div>
+                            <div>
+                                <p class="font-serifTitle text-xl sm:text-2xl font-bold text-oldGold">24 - 48h</p>
+                                <p class="text-xs text-gray-400">Tiempo Récord de Entrega</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Quick-Quote Card -->
+                    <div class="lg:col-span-5 bg-obsidian/90 border border-oldGold/40 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Cotizador Instantáneo</span>
+                                <h3 class="font-serifElegant text-xl font-bold text-white mt-0.5">¿Qué necesitas resolver hoy?</h3>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-boltGreen/50 border border-oldGold/40 flex items-center justify-center text-oldGold">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400">1. Selecciona el Área:</label>
+                            <select id="quick-service-select" onchange="updateQuickQuote()" class="w-full bg-obsidianCard border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:border-oldGold focus:outline-none">
+                                <option value="protocolo" data-price="450 - 700 Bs">Asesoría de Protocolo / Tesis Médica (PICO, Vancouver, SPSS)</option>
+                                <option value="video" data-price="800 Bs/mes">Pack Mensual de Reels/TikToks para Negocio o Evento (8 Videos)</option>
+                                <option value="web" data-price="450 Bs (Pago Único)">Catálogo Web Pro con Cobro QR para Consultorio o Tienda</option>
+                                <option value="packpdf" data-price="120 Bs (4 Guías)">Pack Completo Compendios Médicos + Plantillas Active Recall</option>
+                            </select>
+
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 pt-2">2. Ciudad / Universidad o Rubro (Opcional):</label>
+                            <input type="text" id="quick-city-input" placeholder="Ej. Interno en La Paz / UNIVALLE / Tienda o Evento" class="w-full bg-obsidianCard border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-oldGold focus:outline-none">
+                        </div>
+
+                        <div class="bg-boltGreen/30 border border-emerald-500/30 rounded-xl p-4 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-300 block">Inversión Estimada:</span>
+                                <span id="quick-price-display" class="font-serifTitle text-xl font-bold text-oldGold">450 - 700 Bs</span>
+                            </div>
+                            <span class="text-xs bg-obsidian px-3 py-1 rounded-full text-emerald-400 border border-emerald-500/30">
+                                <i class="fa-solid fa-check-circle mr-1"></i>Cupo Disponible
+                            </span>
+                        </div>
+
+                        <button onclick="sendQuickQuoteWhatsApp()" class="w-full btn-gold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Consultar Disponibilidad por WhatsApp</span>
+                        </button>
+                        <p class="text-[11px] text-center text-gray-400">
+                            <i class="fa-solid fa-lock text-oldGold mr-1"></i>Trato directo, sin intermediarios y 100% confidencial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE SERVICIOS HIGH-TICKET -->
+            <div id="catalogo-servicios" class="space-y-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-oldGold font-bold">División de Servicios High-Ticket</span>
+                        <h2 class="font-serifElegant text-3xl sm:text-4xl font-bold text-white mt-1">
+                            Soluciones de Alto Valor & Entrega Rápida
+                        </h2>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-md">
+                        Diseñado para clientes en todo el eje troncal que valoran su tiempo. Pagos vía Simple QR de cualquier banco boliviano.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- SERVICIO 1: DIVISIÓN CIENTÍFICA -->
+                    <div class="rounded-2xl bg-obsidianCard gold-border-glow p-7 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-oldGold text-obsidian text-[11px] font-extrabold px-3.5 py-1 rounded-bl-xl uppercase tracking-wider">
+                            Más Solicitado Nacional
+                        </div>
+                        <div class="space-y-5">
+                            <div class="w-14 h-14 rounded-2xl bg-boltGreen/50 border border-oldGold/40 flex items-center justify-center text-oldGold text-2xl">
+                                <i class="fa-solid fa-microscope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-widest text-emerald-400">Nivel Investigador Senior</span>
+                                <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                                    División Científica & Metodológica
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Asesoría y estructuración técnica para tesistas de grado, internos rotatorios, residentes y sociedades científicas en La Paz, Cochabamba y Santa Cruz.
+                            </p>
+                            <ul class="space-y-2.5 text-sm text-gray-300 border-t border-white/10 pt-4">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Planteamiento del problema, <strong>Pregunta PICO</strong>, justificación y objetivos.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Búsqueda avanzada en <strong>PubMed / SciELO</strong> y citación automatizada <strong>Vancouver</strong> (Zotero).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Vaciado de datos, cruces de variables, <strong>Chi-cuadrado / p-valor en SPSS o Excel</strong> y gráficos listos.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400 mt-1"></i>
+                                    <span><strong>Reserva absoluta de identidad</strong> para estudiantes de universidades privadas y públicas.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-white/10 space-y-4">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-gray-400 uppercase">Inversión por Proyecto</span>
+                                <span class="font-serifTitle text-2xl font-bold text-oldGold">450 - 700 Bs</span>
+                            </div>
+                            <button onclick="openDirectWhatsApp('Hola AL 100 HUB, me interesa cotizar una Asesoría Científica / Protocolo de Investigación (450-700 Bs). Mi tema o carrera es: ')" class="w-full btn-gold py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Cotizar Protocolo / Estadística</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SERVICIO 2: PRODUCCIÓN VIRAL & EVENTOS -->
+                    <div class="rounded-2xl bg-obsidianCard gold-border-glow p-7 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="w-14 h-14 rounded-2xl bg-boltGreen/50 border border-oldGold/40 flex items-center justify-center text-oldGold text-2xl">
+                                <i class="fa-solid fa-film"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-widest text-emerald-400">Retención Probada (+100K Vistas)</span>
+                                <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                                    Producción Viral & Cobertura de Eventos
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Transformamos negocios locales, consultorios, conciertos y eventos de entretenimiento en imanes de clientes mediante videos verticales de alta retención.
+                            </p>
+                            <ul class="space-y-2.5 text-sm text-gray-300 border-t border-white/10 pt-4">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span><strong>8 a 10 Reels / TikToks mensuales</strong> con ganchos psicológicos en los primeros 3 segundos.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Edición dinámica, subtítulos magnéticos, diseño sonoro y corrección de color cinematográfica.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Modalidad <strong>100% Remota</strong> (nos envías las tomas por Drive) o cobertura presencial de eventos.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-bolt text-emerald-400 mt-1"></i>
+                                    <span>Incluye guiones persuasivos orientados a cerrar ventas por WhatsApp.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-white/10 space-y-4">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-gray-400 uppercase">Abono Mensual / Evento</span>
+                                <span class="font-serifTitle text-2xl font-bold text-oldGold">800 Bs <span class="text-xs text-gray-400 font-normal">/ mes</span></span>
+                            </div>
+                            <button onclick="openDirectWhatsApp('Hola AL 100 HUB, quiero información sobre el Pack de Producción Viral de Reels/TikToks y Cobertura de Eventos (800 Bs/mes) para mi negocio/evento: ')" class="w-full btn-bolt py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-base text-oldGold"></i>
+                                <span>Reservar Cupo Mensual</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SERVICIO 3: DESARROLLO DE CATÁLOGOS WEB CON QR -->
+                    <div class="rounded-2xl bg-obsidianCard gold-border-glow p-7 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-5">
+                            <div class="w-14 h-14 rounded-2xl bg-boltGreen/50 border border-oldGold/40 flex items-center justify-center text-oldGold text-2xl">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-widest text-emerald-400">Cero Mensualidades de Hosting</span>
+                                <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                                    Catálogos Web & Landing Pages con QR
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Creamos sitios web ultrarrápidos para médicos, clínicas, tiendas de ropa, restaurantes y organizadores de eventos con cobro QR integrado.
+                            </p>
+                            <ul class="space-y-2.5 text-sm text-gray-300 border-t border-white/10 pt-4">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span><strong>Pago único sin costos ocultos:</strong> Alojamiento gratuito vitalicio en servidores globales de alta velocidad.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Catálogo interactivo de productos o agenda de citas médicas conectada a tu <strong>WhatsApp</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-oldGold mt-1"></i>
+                                    <span>Ventana de pago <strong>Simple QR Bolivia</strong> integrada para que tus clientes paguen al instante.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-clock text-emerald-400 mt-1"></i>
+                                    <span>Entrega llave en mano en <strong>48 horas</strong> lista para tu biografía de TikTok e Instagram.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-white/10 space-y-4">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-gray-400 uppercase">Pago Único Llave en Mano</span>
+                                <span class="font-serifTitle text-2xl font-bold text-oldGold">450 Bs</span>
+                            </div>
+                            <button onclick="openDirectWhatsApp('Hola AL 100 HUB, quiero mandar a crear mi Catálogo Web / Landing Page con Cobro QR (450 Bs pago único) para mi negocio o consultorio: ')" class="w-full btn-bolt py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-base text-oldGold"></i>
+                                <span>Solicitar Mi Página Web</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- MÓDULO 2: TIENDA DIGITAL 24/7 (INGRESOS PASIVOS POR QR)               -->
+        <!-- ===================================================================== -->
+        <section id="tab-tienda" class="tab-content hidden space-y-10">
+            
+            <!-- Store Header -->
+            <div class="rounded-3xl bg-gradient-to-r from-obsidianCard via-boltGreen/30 to-obsidianCard gold-border-glow p-6 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="space-y-2 max-w-2xl">
+                    <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-oldGold font-bold">
+                        <i class="fa-solid fa-bolt"></i> Descarga Digital Instantánea · 24/7
+                    </span>
+                    <h2 class="font-serifElegant text-3xl sm:text-4xl font-bold text-white">
+                        Biblioteca de Alto Rendimiento & Síntesis Médica
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base">
+                        Esquemas visuales de alta densidad, tablas maestras de mecanismos de acción, bancos de preguntas trampa y plantillas de investigación listas para usar en tablet, PC o imprimir.
+                    </p>
+                </div>
+                <div class="bg-obsidian/80 border border-oldGold/40 rounded-2xl p-4 flex items-center gap-4 shrink-0">
+                    <div class="w-12 h-12 rounded-xl bg-oldGold/20 text-oldGold flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <div class="text-xs space-y-0.5">
+                        <p class="font-bold text-white text-sm">Cómo funciona la compra:</p>
+                        <p class="text-gray-400">1. Eliges tu guía y escaneas el QR en Bs.</p>
+                        <p class="text-gray-400">2. Envías comprobante en 1 clic por WhatsApp.</p>
+                        <p class="text-emerald-400 font-semibold">3. Recibes el link de Google Drive al instante.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2">
+                <button onclick="filterProducts('todos')" class="store-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-oldGold text-obsidian transition">
+                    Todos los Materiales (5)
+                </button>
+                <button onclick="filterProducts('clinica')" class="store-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-obsidianCard text-gray-300 border border-white/10 hover:border-oldGold transition">
+                    Farmacología & Bioquímica
+                </button>
+                <button onclick="filterProducts('investigacion')" class="store-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-obsidianCard text-gray-300 border border-white/10 hover:border-oldGold transition">
+                    Investigación & Tesis
+                </button>
+                <button onclick="filterProducts('estudio')" class="store-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-obsidianCard text-gray-300 border border-white/10 hover:border-oldGold transition">
+                    Sistemas de Estudio & Productividad
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- MÓDULO 3: BLOG GRATUITO CON "AUTOPUBLICIDAD" INTEGRADA                -->
+        <!-- ===================================================================== -->
+        <section id="tab-blog" class="tab-content hidden space-y-10">
+            
+            <!-- Strategic Explanation Banner for Owner & Visitors -->
+            <div class="rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-10 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">
+                            <i class="fa-solid fa-book-open-reader mr-1"></i> Artículos Abiertos de Alto Nivel
+                        </span>
+                        <h2 class="font-serifElegant text-3xl sm:text-4xl font-bold text-white mt-1">
+                            Archivo Científico, Clínica & Estrategia Cognitiva
+                        </h2>
+                    </div>
+                    <div class="bg-boltGreen/40 border border-oldGold/40 rounded-xl px-4 py-2.5 text-xs text-gray-200 max-w-md">
+                        <strong class="text-oldGold"><i class="fa-solid fa-lightbulb mr-1"></i>Motor de Autopublicidad Activo:</strong> Cada artículo gratuito educa al lector e inserta banners nativos que venden tus guías de <strong>35-50 Bs</strong> y asesorías de <strong>450 Bs</strong> automáticamente.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Layout: Left List / Right Full Interactive Article Reader -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Article Selector Sidebar (4 cols) -->
+                <div class="lg:col-span-4 space-y-4">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-oldGold px-1">
+                        Selecciona un Artículo para Leer o Compartir:
+                    </h3>
+                    <div id="blog-sidebar-list" class="space-y-3">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Share to TikTok / WhatsApp Box -->
+                    <div class="p-5 rounded-2xl bg-boltGreen/20 border border-oldGold/30 space-y-3">
+                        <h4 class="font-serifElegant font-bold text-white text-base flex items-center gap-2">
+                            <i class="fa-solid fa-share-nodes text-oldGold"></i>
+                            <span>Tráfico Gratis desde Redes</span>
+                        </h4>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Comparte el enlace de este artículo en grupos de estudio de WhatsApp/Telegram o en tu biografía de TikTok. Quien entra por información gratuita, termina viendo tus compendios y asesorías.
+                        </p>
+                        <button onclick="copyArticleShareText()" class="w-full py-2.5 px-4 rounded-xl bg-obsidian border border-oldGold/40 text-oldGold text-xs font-bold hover:bg-oldGold hover:text-obsidian transition flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copy-share-btn-text">Copiar Invitación para Grupos de Estudio</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Article Reader with Native Self-Ads (8 cols) -->
+                <div id="blog-article-viewer" class="lg:col-span-8 rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-10 space-y-6">
+                    <!-- Populated via JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- MÓDULO 4: PANEL OCULTO "MODO DUEÑO / META YAMAHA BOLT (60.000 Bs)"    -->
+        <!-- ===================================================================== -->
+        <section id="tab-bolt" class="tab-content hidden space-y-10">
+            
+            <!-- Owner Header & Motorcycle Telemetry -->
+            <div class="rounded-3xl bg-gradient-to-br from-boltGreen/60 via-obsidianCard to-obsidian gold-border-glow p-6 sm:p-10 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oldGold/20 border border-oldGold/50 text-oldGold text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-key"></i> Centro de Comando del Propietario
+                        </div>
+                        <h2 class="font-serifElegant text-3xl sm:text-4xl font-bold text-white">
+                            Operación <span class="text-oldGold">Yamaha Bolt R-Spec 942cc</span> (Meta: 60.000 Bs)
+                        </h2>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            Configura aquí tu número real de WhatsApp y tu imagen QR para que toda la página cobre directamente para ti. Usa el simulador inferior para planificar cuántas guías, asesorías o webs necesitas vender al mes para pagarle la cuota a tu amigo sin tocar un banco.
+                        </p>
+                    </div>
+
+                    <!-- Custom SVG Yamaha Bolt R-Spec Camo Green Badge -->
+                    <div class="lg:col-span-4 bg-obsidian/90 border border-oldGold/40 rounded-2xl p-5 flex flex-col items-center text-center space-y-3">
+                        <svg viewBox="0 0 260 110" class="w-48 h-24">
+                            <!-- Rear & Front Wheels -->
+                            <circle cx="50" cy="78" r="24" fill="#0a0c0b" stroke="#d4af37" stroke-width="3"/>
+                            <circle cx="50" cy="78" r="14" fill="none" stroke="#444" stroke-width="2" stroke-dasharray="4 4"/>
+                            <circle cx="210" cy="78" r="24" fill="#0a0c0b" stroke="#d4af37" stroke-width="3"/>
+                            <circle cx="210" cy="78" r="14" fill="none" stroke="#444" stroke-width="2" stroke-dasharray="4 4"/>
+                            <!-- Frame & Exhaust Matte Black -->
+                            <path d="M50 78 L115 78 L145 40 L185 38 L210 78" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+                            <line x1="42" y1="84" x2="145" y2="84" stroke="#555" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Golden Piggyback Rear Shock (R-Spec signature!) -->
+                            <line x1="65" y1="54" x2="55" y2="75" stroke="#d4af37" stroke-width="4"/>
+                            <rect x="64" y="50" width="6" height="10" rx="2" fill="#d4af37"/>
+                            <!-- V-Twin 942cc Engine Block -->
+                            <polygon points="105,52 140,52 135,80 100,80" fill="#1a1d1b" stroke="#d4af37" stroke-width="1.5"/>
+                            <!-- Camo Green Peanut Tank -->
+                            <path d="M115 48 C122 30, 155 28, 168 44 L130 50 Z" fill="#2d6a4f" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Bobber Solo Seat -->
+                            <path d="M72 52 Q95 54 112 48 L105 56 L70 56 Z" fill="#222" stroke="#666" stroke-width="1.5"/>
+                            <!-- Handlebars & Round Headlight -->
+                            <line x1="175" y1="24" x2="155" y2="26" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="190" cy="42" r="7" fill="#f3e5ab" stroke="#d4af37" stroke-width="2"/>
+                        </svg>
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block">Yamaha XV950R (2014)</span>
+                            <span class="font-serifTitle text-lg font-bold text-white">Precio Amigo: 60.000 Bs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 1: LIVE CONFIGURATION (WHATSAPP & QR) + BOLT SIMULATOR -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Left Column: WhatsApp & QR Customizer (5 cols) -->
+                <div class="lg:col-span-5 rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-white/10 pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-oldGold">Paso 1 · Personalización Instantánea</span>
+                        <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                            Conecta tu WhatsApp y tu QR Bancario
+                        </h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                                Tu Número de WhatsApp Bolivia (8 dígitos):
+                            </label>
+                            <div class="flex gap-2">
+                                <span class="bg-obsidian border border-white/15 rounded-xl px-3.5 py-3 text-sm text-oldGold font-bold flex items-center">
+                                    +591
+                                </span>
+                                <input type="tel" id="owner-phone-input" maxlength="8" placeholder="Ej. 72345678" class="w-full bg-obsidian border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:border-oldGold focus:outline-none">
+                            </div>
+                            <p class="text-[11px] text-gray-400 mt-1.5">
+                                Todos los botones de "Cotizar" y "Enviar Comprobante QR" de la web enviarán los pedidos directamente a este número.
+                            </p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                                Nombre de la Cuenta / Alias en el Checkout QR:
+                            </label>
+                            <input type="text" id="owner-alias-input" placeholder="Ej. AL 100 HUB - Pagos Digitales" class="w-full bg-obsidian border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:border-oldGold focus:outline-none">
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                                Sube la Imagen de tu Simple QR Bancario (Opcional):
+                            </label>
+                            <label class="w-full cursor-pointer bg-obsidian hover:bg-boltGreen/30 border border-dashed border-oldGold/50 rounded-xl p-4 flex flex-col items-center justify-center text-center transition">
+                                <i class="fa-solid fa-cloud-arrow-up text-2xl text-oldGold mb-1"></i>
+                                <span class="text-xs font-semibold text-white">Seleccionar imagen QR desde tu galería/PC</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5">Se guarda en tu navegador y aparece cuando un cliente compra</span>
+                                <input type="file" id="owner-qr-upload" accept="image/*" onchange="handleQRUpload(event)" class="hidden">
+                            </label>
+                        </div>
+
+                        <button onclick="saveOwnerConfig()" class="w-full btn-gold py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            <span>Guardar Configuración en Vivo</span>
+                        </button>
+
+                        <div id="config-saved-toast" class="hidden bg-emerald-950/80 border border-emerald-400/50 text-emerald-300 text-xs px-4 py-3 rounded-xl flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-base"></i>
+                            <span>¡Listo! Toda la página ya está conectada a tu WhatsApp y QR.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Yamaha Bolt Cashflow Simulator (7 cols) -->
+                <div class="lg:col-span-7 rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-8 space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Paso 2 · Plan Financiero Realista</span>
+                            <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                                Calculadora de Flujo para Pagar los 60.000 Bs
+                            </h3>
+                        </div>
+                        <span class="text-xs bg-boltGreen/60 text-oldGold px-3 py-1 rounded-full border border-oldGold/30 font-semibold">
+                            0% Interés (Trato Directo con tu Amigo)
+                        </span>
+                    </div>
+
+                    <!-- Sliders -->
+                    <div class="space-y-5">
+                        <!-- Entrada Inicial -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs sm:text-sm">
+                                <span class="text-gray-300 font-medium">1. Cuota Inicial al Contado (Ahorros / Flipping):</span>
+                                <span id="sim-downpayment-val" class="font-bold text-oldGold">20.000 Bs</span>
+                            </div>
+                            <input type="range" id="sim-downpayment" min="0" max="45000" step="2500" value="20000" oninput="updateBoltSimulator()" class="w-full">
+                        </div>
+
+                        <!-- Venta de Compendios PDF (35-40 Bs) -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs sm:text-sm">
+                                <span class="text-gray-300 font-medium">2. Compendios PDF vendidos al mes (Prom. 38 Bs c/u):</span>
+                                <span id="sim-pdfs-val" class="font-bold text-emerald-400">25 descargas/mes (950 Bs)</span>
+                            </div>
+                            <input type="range" id="sim-pdfs" min="0" max="100" step="5" value="25" oninput="updateBoltSimulator()" class="w-full">
+                        </div>
+
+                        <!-- Asesorías Científicas / Protocolos (500 Bs) -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs sm:text-sm">
+                                <span class="text-gray-300 font-medium">3. Protocolos / Asesorías Científicas al mes (500 Bs c/u):</span>
+                                <span id="sim-thesis-val" class="font-bold text-emerald-400">3 clientes/mes (1.500 Bs)</span>
+                            </div>
+                            <input type="range" id="sim-thesis" min="0" max="10" step="1" value="3" oninput="updateBoltSimulator()" class="w-full">
+                        </div>
+
+                        <!-- Clientes de Video / Catálogos Web QR (650 Bs prom.) -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs sm:text-sm">
+                                <span class="text-gray-300 font-medium">4. Packs de Video o Páginas Web QR al mes (650 Bs c/u):</span>
+                                <span id="sim-agency-val" class="font-bold text-emerald-400">2 clientes/mes (1.300 Bs)</span>
+                            </div>
+                            <input type="range" id="sim-agency" min="0" max="8" step="1" value="2" oninput="updateBoltSimulator()" class="w-full">
+                        </div>
+                    </div>
+
+                    <!-- Results Telemetry Box -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                        <div class="bg-obsidian p-4 rounded-2xl border border-oldGold/30">
+                            <span class="text-[11px] uppercase text-gray-400 block">Ingreso Mensual Generado</span>
+                            <span id="sim-total-monthly" class="font-serifTitle text-2xl font-bold text-oldGold mt-1 block">3.750 Bs</span>
+                            <span id="sim-hours-week" class="text-[11px] text-emerald-400 mt-1 block">~7 hrs/semana usando IA</span>
+                        </div>
+                        <div class="bg-obsidian p-4 rounded-2xl border border-white/10">
+                            <span class="text-[11px] uppercase text-gray-400 block">Saldo a Pagar a tu Amigo</span>
+                            <span id="sim-remaining-debt" class="font-serifTitle text-2xl font-bold text-white mt-1 block">40.000 Bs</span>
+                            <span class="text-[11px] text-gray-400 mt-1 block">Tras entregar la inicial</span>
+                        </div>
+                        <div class="bg-boltGreen/40 p-4 rounded-2xl border border-emerald-400/40">
+                            <span class="text-[11px] uppercase text-emerald-300 block">Tiempo para Liquidar la Bolt</span>
+                            <span id="sim-months-payoff" class="font-serifTitle text-2xl font-bold text-white mt-1 block">10.7 Meses</span>
+                            <span id="sim-surplus-badge" class="text-[11px] text-oldGold font-semibold mt-1 block">Cubre cuota de 2.500 Bs + 1.250 Bs libres</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2: AI WORKER PROMPTS + FREE HOSTING DEPLOYMENT GUIDE -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Prompt Generator to Make AI Do 90% of the Work -->
+                <div class="rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-8 space-y-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-oldGold">Tu Empleado IA 24/7</span>
+                        <h3 class="font-serifElegant text-2xl font-bold text-white mt-1">
+                            Comandos Listos para Entregar Pedidos en 20 Minutos
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                            Cuando un cliente te pague por QR, copia uno de estos comandos, pégalo en nuestro chat de IA y deja que yo haga el trabajo pesado:
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-2xl bg-obsidian border border-white/10 flex items-center justify-between gap-4">
+                            <div class="text-xs space-y-1">
+                                <span class="font-bold text-oldGold block">1. Comando para Entregar un Protocolo de 500 Bs:</span>
+                                <p class="text-gray-400 line-clamp-2">"Actúa como metodólogo médico senior. Con base en este tema [TEMA] en el hospital [HOSPITAL], redáctame pregunta PICO, planteamiento del problema con datos de Bolivia/OMS, objetivos, diseño metodológico y 10 referencias formato Vancouver..."</p>
+                            </div>
+                            <button onclick="copyPromptText(1)" class="shrink-0 px-3.5 py-2 rounded-xl bg-boltGreen text-oldGold border border-oldGold/40 text-xs font-bold hover:bg-oldGold hover:text-obsidian transition">
+                                Copiar
+                            </button>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-obsidian border border-white/10 flex items-center justify-between gap-4">
+                            <div class="text-xs space-y-1">
+                                <span class="font-bold text-emerald-400 block">2. Comando para Crear un Compendio PDF de 40 Bs en 1 Tarde:</span>
+                                <p class="text-gray-400 line-clamp-2">"Toma este temario de [MATERIA] y genérame 3 tablas maestras de mecanismos de acción, efectos adversos clave, mnemotecnias visuales y un banco de 40 preguntas trampa de opción múltiple con respuesta justificada..."</p>
+                            </div>
+                            <button onclick="copyPromptText(2)" class="shrink-0 px-3.5 py-2 rounded-xl bg-boltGreen text-oldGold border border-oldGold/40 text-xs font-bold hover:bg-oldGold hover:text-obsidian transition">
+                                Copiar
+                            </button>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-obsidian border border-white/10 flex items-center justify-between gap-4">
+                            <div class="text-xs space-y-1">
+                                <span class="font-bold text-amber-300 block">3. Comando para Venderle una Web de 450 Bs a un Negocio:</span>
+                                <p class="text-gray-400 line-clamp-2">"Créame en un solo archivo HTML una página web moderna con catálogo y cobro QR para el negocio [NOMBRE DEL NEGOCIO] en Oruro/Bolivia, rubro [RUBRO], conectada al WhatsApp [NÚMERO]..."</p>
+                            </div>
+                            <button onclick="copyPromptText(3)" class="shrink-0 px-3.5 py-2 rounded-xl bg-boltGreen text-oldGold border border-oldGold/40 text-xs font-bold hover:bg-oldGold hover:text-obsidian transition">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+                    <div id="prompt-copied-banner" class="hidden text-xs text-center text-oldGold bg-oldGold/10 border border-oldGold/30 rounded-xl py-2 font-semibold">
+                        ¡Comando copiado al portapapeles! Pégalo aquí en el chat cuando tengas un cliente.
+                    </div>
+                </div>
+
+                <!-- Step-by-step Free Publishing Guide (Netlify Drop / Vercel) -->
+                <div class="rounded-3xl bg-obsidianCard gold-border-glow p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Cero Dólares en Dominio ni Hosting</span>
+                        <h3 class="font-serifElegant text-2xl font-bold text-white">
+                            Cómo Publicar Esta Web Gratis en 2 Minutos
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-300">
+                            No necesitas pagar nada. Sigue estos 3 pasos para tener tu link público hoy mismo (`al100hub.netlify.app` o `.vercel.app`):
+                        </p>
+
+                        <ol class="space-y-3 text-xs sm:text-sm text-gray-300 pt-2">
+                            <li class="flex items-start gap-3 bg-obsidian p-3.5 rounded-xl border border-white/10">
+                                <span class="w-6 h-6 rounded-full bg-oldGold text-obsidian font-extrabold flex items-center justify-center shrink-0 text-xs">1</span>
+                                <div>
+                                    <strong class="text-white">Descarga este archivo listo:</strong> Haz clic en el botón dorado de abajo para guardar tu página como un archivo `index.html` en tu PC o celular.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-obsidian p-3.5 rounded-xl border border-white/10">
+                                <span class="w-6 h-6 rounded-full bg-oldGold text-obsidian font-extrabold flex items-center justify-center shrink-0 text-xs">2</span>
+                                <div>
+                                    <strong class="text-white">Entra a Netlify Drop o Tiiny.host / Vercel:</strong> Abre `app.netlify.com/drop` (gratis con tu correo de Google, sin tarjeta de crédito).
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-obsidian p-3.5 rounded-xl border border-white/10">
+                                <span class="w-6 h-6 rounded-full bg-oldGold text-obsidian font-extrabold flex items-center justify-center shrink-0 text-xs">3</span>
+                                <div>
+                                    <strong class="text-white">Arrastra la carpeta con tu archivo:</strong> En 5 segundos te dará tu link público HTTPS gratuito para poner en tu TikTok, Instagram y WhatsApp.
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <button onclick="downloadStandaloneHTML()" class="flex-1 btn-gold py-3.5 px-5 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Descargar Mi Web Lista (index.html)</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL DE CHECKOUT INTERACTIVO SIMPLE QR BOLIVIA                       -->
+    <!-- ===================================================================== -->
+    <div id="qr-checkout-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-obsidianCard gold-border-glow rounded-3xl max-w-md w-full p-6 sm:p-8 relative space-y-5 animate-fadeIn">
+            <!-- Close Button -->
+            <button onclick="closeQRModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-obsidian border border-white/15 text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-emerald-400 font-bold">
+                    <i class="fa-solid fa-shield-check"></i> Pago Seguro Simple QR Bolivia
+                </span>
+                <h3 id="modal-product-title" class="font-serifElegant text-xl font-bold text-white">
+                    Compendio Visual Maestro
+                </h3>
+                <p id="modal-product-price" class="font-serifTitle text-2xl font-bold text-oldGold">
+                    40 Bs.
+                </p>
+            </div>
+
+            <!-- QR Display Container -->
+            <div class="bg-white rounded-2xl p-5 flex flex-col items-center justify-center mx-auto max-w-[230px] shadow-inner">
+                <img id="modal-custom-qr-img" src="" alt="QR Bancario" class="hidden w-44 h-44 object-contain rounded-lg">
+                <!-- Default crisp SVG Simulated QR if owner hasn't uploaded theirs yet -->
+                <div id="modal-default-qr-svg" class="w-44 h-44 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 120 120" class="w-40 h-40">
+                        <rect width="120" height="120" fill="#ffffff"/>
+                        <!-- Corner Position Squares -->
+                        <rect x="8" y="8" width="32" height="32" fill="none" stroke="#0a0c0b" stroke-width="6"/>
+                        <rect x="16" y="16" width="16" height="16" fill="#1b4332"/>
+                        <rect x="80" y="8" width="32" height="32" fill="none" stroke="#0a0c0b" stroke-width="6"/>
+                        <rect x="88" y="16" width="16" height="16" fill="#1b4332"/>
+                        <rect x="8" y="80" width="32" height="32" fill="none" stroke="#0a0c0b" stroke-width="6"/>
+                        <rect x="16" y="88" width="16" height="16" fill="#1b4332"/>
+                        <!-- Data Matrix Pattern -->
+                        <g fill="#0a0c0b">
+                            <rect x="48" y="10" width="6" height="6"/><rect x="60" y="10" width="6" height="12"/>
+                            <rect x="48" y="24" width="12" height="6"/><rect x="66" y="24" width="6" height="6"/>
+                            <rect x="10" y="48" width="12" height="6"/><rect x="28" y="48" width="6" height="12"/>
+                            <rect x="44" y="44" width="32" height="32" rx="4" fill="#1b4332"/>
+                            <text x="60" y="64" text-anchor="middle" fill="#d4af37" font-size="11" font-weight="bold" font-family="serif">QR Bs</text>
+                            <rect x="84" y="48" width="10" height="6"/><rect x="100" y="48" width="10" height="12"/>
+                            <rect x="84" y="64" width="16" height="6"/><rect x="48" y="84" width="12" height="6"/>
+                            <rect x="66" y="84" width="6" height="16"/><rect x="80" y="84" width="12" height="12"/>
+                            <rect x="98" y="84" width="12" height="6"/><rect x="84" y="102" width="26" height="8"/>
+                            <rect x="48" y="98" width="12" height="12"/>
+                        </g>
+                    </svg>
+                </div>
+                <span id="modal-qr-alias" class="text-[11px] font-bold text-gray-800 mt-2 uppercase tracking-wider">
+                    AL 100 HUB · SIMPLE QR BOLIVIA
+                </span>
+            </div>
+
+            <!-- Instructions -->
+            <div class="bg-obsidian rounded-2xl p-4 border border-white/10 text-xs text-gray-300 space-y-1.5">
+                <p class="font-semibold text-white"><i class="fa-solid fa-bolt text-oldGold mr-1"></i> Entrega automatizada en 2 pasos:</p>
+                <p>1. Escanea el QR desde la app de tu banco (BCP, BNB, Mercantil, Unión, Ganadero, Yape o Tigo Money).</p>
+                <p>2. Pulsa el botón inferior para enviar la captura del comprobante por WhatsApp y recibir tu enlace de Google Drive al instante.</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2">
+                <button id="modal-whatsapp-confirm-btn" class="w-full btn-gold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Ya Pagué · Enviar Comprobante y Recibir Link</span>
+                </button>
+                <button onclick="closeQRModal(); switchTab('bolt')" class="w-full text-center text-[11px] text-gray-400 hover:text-oldGold underline py-1">
+                    ¿Eres el dueño de la página? Haz clic aquí para subir tu propio QR bancario
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-obsidian py-8 px-4 mt-16">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+            <div class="flex items-center gap-3">
+                <span class="font-serifTitle font-bold text-oldGold">AL 100 HUB</span>
+                <span>·</span>
+                <span>Ciencia, Alto Rendimiento & Estudio Digital</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchTab('servicios')" class="hover:text-oldGold transition">Servicios</button>
+                <button onclick="switchTab('tienda')" class="hover:text-oldGold transition">Tienda QR</button>
+                <button onclick="switchTab('blog')" class="hover:text-oldGold transition">Blog Científico</button>
+                <button onclick="switchTab('bolt')" class="text-oldGold/80 hover:text-oldGold transition"><i class="fa-solid fa-gear mr-1"></i>Panel Dueño</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT LOGIC & INTERACTIVE STATE                                  -->
+    <!-- ===================================================================== -->
+    <script>
+        // --- 1. ESTADO DE CONFIGURACIÓN DEL PROPIETARIO ---
+        let ownerConfig = {
+            phone: localStorage.getItem('al100_owner_phone') || '73800838',
+            alias: localStorage.getItem('al100_owner_alias') || 'AL 100 HUB · PAGOS QR BOLIVIA',
+            customQR: localStorage.getItem('al100_owner_qr') || ''
+        };
+
+        // --- 2. CATÁLOGO DE PRODUCTOS DIGITALES 24/7 (INGRESOS PASIVOS) ---
+        const digitalProducts = [
+            {
+                id: 'prod-farmaco',
+                category: 'clinica',
+                badge: 'Bestseller Medicina',
+                title: 'Compendio Visual Maestro: Farmacología & Mecanismos de Acción',
+                price: 40,
+                pages: '85 páginas HD + Tablas',
+                description: 'Esquemas integrados de receptores, cascadas intracelulares, antibióticos, antihipertensivos, AINEs y fármacos del SNC. Diseñado para aprobar parciales sin memorizar texto plano.',
+                features: ['Tablas comparativas de dianas terapéuticas', 'Efectos adversos "pregunta de examen"', 'Formato optimizado para Tablet y PDF imprimible']
+            },
+            {
+                id: 'prod-bioq',
+                category: 'clinica',
+                badge: 'Especial Parciales',
+                title: 'Guía de Supervivencia: Bioquímica, Hormonas & Vías Metabólicas + Banco',
+                price: 35,
+                pages: '64 páginas + 100 Preguntas',
+                description: 'Rutas metabólicas simplificadas al extremo (glucólisis, Krebs, regulación hormonal, bioquímica clínica) más banco de 100 preguntas de opción múltiple y completación justificadas.',
+                features: ['Mapas visuales de enzimas reguladoras', 'Banco de 100 preguntas trampa con clave', 'Casos bioquímicos integrados']
+            },
+            {
+                id: 'prod-investigacion',
+                category: 'investigacion',
+                badge: 'Nivel SOCEM / Tesis',
+                title: 'Pack Investigador Senior: Plantillas de Protocolo + Guía Zotero/Vancouver',
+                price: 50,
+                pages: 'Kit Editable Word + Guía PDF',
+                description: 'El sistema exacto para armar protocolos de investigación, tesinas y casos clínicos en una sola tarde sin bloqueos. Incluye plantillas listas para rellenar.',
+                features: ['Plantilla maestra de Protocolo Clínico en Word', 'Fórmulas de tamaño muestral y tabla de operacionalización', 'Guía rápida de automatización Vancouver']
+            },
+            {
+                id: 'prod-feynman',
+                category: 'estudio',
+                badge: 'Alto Rendimiento',
+                title: 'Sistema Active Recall & Método Feynman: Plantillas y Mazos Base',
+                price: 30,
+                pages: 'Sistema Digital Completo',
+                description: 'Domina la retención a largo plazo estudiando la mitad del tiempo. Plantillas para estructurar apuntes en tablet y protocolo de autoevaluación pre-examen.',
+                features: ['Plantillas Dark Academia para GoodNotes / Notability / OneNote', 'Estructura paso a paso de simplificación Feynman', 'Cronograma de repetición espaciada']
+            },
+            {
+                id: 'prod-bundle',
+                category: 'todos',
+                badge: 'Ahorras 35 Bs · Pack Total',
+                title: 'BUNDLE AL 100: Los 4 Compendios + Plantillas de Investigación y Estudio',
+                price: 120,
+                pages: 'Acceso Total Vitalicio',
+                description: 'Llévate absolutamente toda la biblioteca digital de AL 100 HUB con descuento especial. Ideal para asegurar el año académico completo y tus trabajos de investigación.',
+                features: ['Incluye Farmacología + Bioquímica + Pack Investigador + Sistema Feynman', 'Actualizaciones gratuitas en Google Drive', 'Prioridad en consultas académicas']
+            }
+        ];
+
+        // --- 3. ARTÍCULOS DEL BLOG GRATUITO CON AUTOPUBLICIDAD NATIVA ---
+        const blogArticles = [
+            {
+                id: 'art-farmaco',
+                tag: 'Farmacología Clínica',
+                readTime: '4 min lectura',
+                title: 'Cómo Dominar Farmacología Antihipertensiva y Receptores sin Memorizar en Vano',
+                subtitle: 'El secreto no está en releer 40 páginas del Goodman & Gilman, sino en mapear los 4 ejes fisiológicos de presión arterial.',
+                contentTop: `
+                    <p class="text-gray-300 leading-relaxed">
+                        El error número uno al estudiar Farmacología para un examen parcial o final es intentar memorizar listas aisladas de medicamentos. Cuando el docente cambia la pregunta de una simple definición a un <strong>caso clínico con efectos adversos cruzados</strong>, la memoria fotográfica falla y entra el bloqueo.
+                    </p>
+                    <h4 class="font-serifElegant text-xl font-bold text-oldGold pt-3">La Regla de la Deductibilidad por Receptores</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        En lugar de memorizar 30 fármacos, domina únicamente los <strong>3 nodos hemodinámicos</strong>: Gasto Cardíaco (Receptores Beta-1), Resistencia Vascular Periférica (Canales de Calcio tipo L y Receptores Alfa-1) y Volumen Intravascular (Sistema Renina-Angiotensina-Aldosterona y túbulo renal).
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
+                        <li><strong>IECAs (-pril) vs. ARA-II (-sartán):</strong> Ambos bloquean el eje angiotensina II, pero solo los IECAs inhiben la degradación de <em>bradicinina</em>. De ahí se deduce en 2 segundos por qué el Enalapril produce tos seca y angioedema, y el Losartán no.</li>
+                        <li><strong>Calcioantagonistas Dihidropiridínicos (-dipino):</strong> Selectivos vasculares. Si vasodilatan de golpe la arteriola aferente, generan edema maleolar por presión hidrostática, no por sobrecarga de volumen.</li>
+                    </ul>
+                `,
+                nativeAd: {
+                    type: 'product',
+                    badge: 'PUBLICIDAD NATIVA PROPIA · DESCARGA INMEDIATA',
+                    headline: '¿Tienes examen de Farmacología o Bioquímica pronto?',
+                    subtext: 'No pierdas 3 semanas resumiendo. Descarga ahora el "Compendio Visual Maestro: Farmacología & Mecanismos de Acción" con todas las familias resumidas en esquemas de alta retención.',
+                    priceText: '40 Bs vía Simple QR',
+                    ctaText: 'Descargar Compendio por 40 Bs',
+                    productId: 'prod-farmaco'
+                },
+                contentBottom: `
+                    <h4 class="font-serifElegant text-xl font-bold text-oldGold pt-3">Cómo responder preguntas de completación en segundos</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Cada vez que estudies una familia farmacológica, dibuja una matriz de solo 4 columnas: <strong>1) Diana molecular exacta, 2) Efecto hemodinámico primario, 3) Efecto adverso patognomónico y 4) Contraindicación absoluta</strong>. Con esa sola hoja dominas el 90% del banco de preguntas.
+                    </p>
+                `
+            },
+            {
+                id: 'art-protocolo',
+                tag: 'Metodología & SOCEM',
+                readTime: '5 min lectura',
+                title: 'Estructura un Protocolo Clínico Ganador en 1 Sola Tarde: De la Pregunta PICO al Chi-Cuadrado',
+                subtitle: 'Por qué el 80% de los tesistas e internos se estancan durante meses en el marco metodológico y cómo resolverlo con arquitectura inversa.',
+                contentTop: `
+                    <p class="text-gray-300 leading-relaxed">
+                        Ya sea para un congreso científico estudiantil, una publicación en revista indexada o tu tesis de grado, empezar redactando la introducción desde cero es una trampa mortal. Un protocolo sólido se construye <strong>de atrás hacia adelante</strong>: primero defines la tabla estadística final y luego redactas el texto.
+                    </p>
+                    <h4 class="font-serifElegant text-xl font-bold text-oldGold pt-3">El Esqueleto PICO + Matriz de Operacionalización</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Si tu <strong>Pregunta PICO</strong> (Población, Intervención/Exposición, Comparador, Outcome/Resultado) está bien formulada, el título del trabajo, el objetivo general y la hipótesis salen por copia directa:
+                    </p>
+                    <div class="bg-obsidian p-4 rounded-xl border border-oldGold/30 text-xs sm:text-sm text-gray-200 font-mono">
+                        Objetivo General = Verbo infinitivo (Determinar/Asociar) + Variable Independiente + Variable Dependiente + Unidad de Estudio + Lugar + Periodo.
+                    </div>
+                `,
+                nativeAd: {
+                    type: 'service',
+                    badge: 'SERVICIO PROFESIONAL CONFIDENCIAL · BOLIVIA',
+                    headline: '¿Sin tiempo para armar tu Protocolo, Tesis o Estadística en SPSS?',
+                    subtext: 'Nuestra División Científica estructura tu protocolo completo, búsqueda PubMed en formato Vancouver y procesamiento estadístico con tablas listas en 48 horas. 100% confidencial.',
+                    priceText: 'Desde 450 Bs',
+                    ctaText: 'Cotizar Asesoría por WhatsApp',
+                    whatsappMsg: 'Hola AL 100 HUB, leí su artículo de Metodología y quiero cotizar apoyo con mi Protocolo / Estadística (450-700 Bs).'
+                },
+                contentBottom: `
+                    <h4 class="font-serifElegant text-xl font-bold text-oldGold pt-3">Automatización de Bibliografía Vancouver en 5 Minutos</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Jamás escribas referencias Vancouver a mano. Al conectar el conector de navegador de Zotero directamente con PubMed y SciELO, puedes insertar 30 referencias actualizadas de los últimos 5 años y reordenarlas automáticamente si tu tribunal te pide cambiar un párrafo.
+                    </p>
+                `
+            },
+            {
+                id: 'art-neuro',
+                tag: 'Alto Rendimiento Cognitivo',
+                readTime: '4 min lectura',
+                title: 'Neurociencia del Estudio Intenso: Active Recall, Método Feynman y Acústica Clásica',
+                subtitle: 'Cómo estudiar medicina a nivel de excelencia sin sacrificar tu vida ni caer en la ilusión de competencia por subrayar libros.',
+                contentTop: `
+                    <p class="text-gray-300 leading-relaxed">
+                        Subrayar apuntes con cuatro colores y releer pasivamente genera lo que en neurociencia cognitiva se conoce como <strong>ilusión de competencia</strong>: reconoces el texto al verlo, pero tu hipocampo no ha consolidado la ruta de evocación activa necesaria para responder bajo presión.
+                    </p>
+                    <h4 class="font-serifElegant text-xl font-bold text-oldGold pt-3">El Protocolo de Evocación Forzada + Acústica Instrumental</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Cuando estudias bloques densos acompañado de música instrumental barroca o clásica (como Vivaldi o Bach, sin letra que compita con el área de Wernicke y el bucle fonológico), mantienes la corteza prefrontal enfocada mientras aplicas el <strong>Método Feynman</strong>: cerrar el libro y explicar el mecanismo fisiopatológico en voz alta o en una hoja en blanco como si se lo enseñaras a alguien desde cero.
+                    </p>
+                `,
+                nativeAd: {
+                    type: 'product',
+                    badge: 'KIT DE PRODUCTIVIDAD & ESTUDIO',
+                    headline: 'Domina el Sistema Active Recall & Feynman hoy mismo',
+                    subtext: 'Adquiere nuestras plantillas digitales en modo oscuro + mazos estructurados para duplicar tu velocidad de retención.',
+                    priceText: '30 Bs vía Simple QR',
+                    ctaText: 'Adquirir Sistema por 30 Bs',
+                    productId: 'prod-feynman'
+                },
+                contentBottom: `
+                    <p class="text-gray-300 leading-relaxed">
+                        Cada vez que te trabas al explicar un paso de una cascada bioquímica, acabas de encontrar exactamente la laguna que el docente usará en el examen. Corrígela en ese instante y tu retención subirá por encima del 90%.
+                    </p>
+                `
+            }
+        ];
+
+        let currentArticleIndex = 0;
+
+        // --- 4. NAVEGACIÓN DE PESTAÑAS ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-boltGreen', 'text-oldGold', 'border-oldGold/40');
+                btn.classList.add('text-gray-300');
+            });
+
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-300');
+                activeBtn.classList.add('bg-boltGreen', 'text-oldGold', 'border', 'border-oldGold/40');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
+        }
+
+        // --- 5. COTIZADOR RÁPIDO & WHATSAPP ---
+        function updateQuickQuote() {
+            const select = document.getElementById('quick-service-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+            document.getElementById('quick-price-display').textContent = price;
+        }
+
+        function openDirectWhatsApp(customMessage) {
+            const cleanPhone = ownerConfig.phone.replace(/\D/g, '');
+            const encodedMsg = encodeURIComponent(customMessage);
+            window.open(`https://wa.me/591${cleanPhone}?text=${encodedMsg}`, '_blank');
+        }
+
+        function sendQuickQuoteWhatsApp() {
+            const select = document.getElementById('quick-service-select');
+            const serviceText = select.options[select.selectedIndex].text;
+            const cityContext = document.getElementById('quick-city-input').value.trim() || 'Bolivia';
+            const msg = `Hola AL 100 HUB, vengo de su plataforma web. Quiero cotizar: *${serviceText}*. Contexto/Ciudad: ${cityContext}. ¿Tienen disponibilidad esta semana?`;
+            openDirectWhatsApp(msg);
+        }
+
+        // --- 6. RENDERIZADO DE LA TIENDA DIGITAL 24/7 ---
+        function renderStoreProducts(filter = 'todos') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'todos'
+                ? digitalProducts
+                : digitalProducts.filter(p => p.category === filter || p.id === 'prod-bundle');
+
+            filtered.forEach(prod => {
+                const isBundle = prod.id === 'prod-bundle';
+                const card = document.createElement('div');
+                card.className = `rounded-2xl ${isBundle ? 'bg-gradient-to-br from-boltGreen/50 via-obsidianCard to-obsidian border-2 border-oldGold' : 'bg-obsidianCard gold-border-glow'} p-6 flex flex-col justify-between`;
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${isBundle ? 'bg-oldGold text-obsidian' : 'bg-boltGreen/60 text-oldGold border border-oldGold/30'}">
+                                ${prod.badge}
+                            </span>
+                            <span class="text-xs text-gray-400"><i class="fa-regular fa-file-pdf text-oldGold mr-1"></i>${prod.pages}</span>
+                        </div>
+                        <h3 class="font-serifElegant text-xl font-bold text-white leading-snug">
+                            ${prod.title}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            ${prod.description}
+                        </p>
+                        <ul class="space-y-1.5 text-xs text-gray-300 pt-2 border-t border-white/10">
+                            ${prod.features.map(f => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i><span>${f}</span></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="pt-5 mt-5 border-t border-white/10 flex items-center justify-between gap-4">
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-400 block">Descarga Inmediata</span>
+                            <span class="font-serifTitle text-2xl font-bold text-oldGold">${prod.price} Bs.</span>
+                        </div>
+                        <button onclick="openQRCheckout('${prod.id}')" class="btn-gold px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-qrcode"></i>
+                            <span>Comprar con QR</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts(category) {
+            document.querySelectorAll('.store-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-oldGold', 'text-obsidian');
+                btn.classList.add('bg-obsidianCard', 'text-gray-300');
+            });
+            event.currentTarget.classList.remove('bg-obsidianCard', 'text-gray-300');
+            event.currentTarget.classList.add('bg-oldGold', 'text-obsidian');
+            renderStoreProducts(category);
+        }
+
+        // --- 7. MODAL DE CHECKOUT SIMPLE QR ---
+        function openQRCheckout(productId) {
+            const product = digitalProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('modal-product-title').textContent = product.title;
+            document.getElementById('modal-product-price').textContent = `${product.price} Bs.`;
+            document.getElementById('modal-qr-alias').textContent = ownerConfig.alias;
+
+            const customImg = document.getElementById('modal-custom-qr-img');
+            const defaultSvg = document.getElementById('modal-default-qr-svg');
+
+            if (ownerConfig.customQR) {
+                customImg.src = ownerConfig.customQR;
+                customImg.classList.remove('hidden');
+                defaultSvg.classList.add('hidden');
+            } else {
+                customImg.classList.add('hidden');
+                defaultSvg.classList.remove('hidden');
+            }
+
+            const confirmBtn = document.getElementById('modal-whatsapp-confirm-btn');
+            confirmBtn.onclick = function() {
+                const msg = `Hola AL 100 HUB, acabo de realizar el pago por Simple QR de *${product.price} Bs* por el material: *"${product.title}"*. Adjunto mi comprobante aquí para recibir el enlace de descarga en Google Drive.`;
+                openDirectWhatsApp(msg);
+            };
+
+            document.getElementById('qr-checkout-modal').classList.remove('hidden');
+        }
+
+        function closeQRModal() {
+            document.getElementById('qr-checkout-modal').classList.add('hidden');
+        }
+
+        // --- 8. BLOG GRATUITO CON AUTOPUBLICIDAD INTEGRADA ---
+        function renderBlogSection() {
+            const sidebar = document.getElementById('blog-sidebar-list');
+            sidebar.innerHTML = '';
+
+            blogArticles.forEach((art, idx) => {
+                const isSelected = idx === currentArticleIndex;
+                const item = document.createElement('button');
+                item.onclick = () => { currentArticleIndex = idx; renderBlogSection(); };
+                item.className = `w-full text-left p-4 rounded-2xl transition border ${isSelected ? 'bg-boltGreen/50 border-oldGold text-white shadow-lg' : 'bg-obsidianCard border-white/10 text-gray-300 hover:border-oldGold/40'}`;
+                item.innerHTML = `
+                    <div class="flex items-center justify-between text-[11px] text-oldGold font-bold uppercase mb-1">
+                        <span>${art.tag}</span>
+                        <span>${art.readTime}</span>
+                    </div>
+                    <h4 class="font-serifElegant font-bold text-sm sm:text-base leading-snug">${art.title}</h4>
+                `;
+                sidebar.appendChild(item);
+            });
+
+            const activeArt = blogArticles[currentArticleIndex];
+            const viewer = document.getElementById('blog-article-viewer');
+
+            let nativeAdActionHTML = '';
+            if (activeArt.nativeAd.type === 'product') {
+                nativeAdActionHTML = `
+                    <button onclick="openQRCheckout('${activeArt.nativeAd.productId}')" class="btn-gold px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2 shrink-0">
+                        <i class="fa-solid fa-qrcode"></i>
+                        <span>${activeArt.nativeAd.ctaText}</span>
+                    </button>
+                `;
+            } else {
+                nativeAdActionHTML = `
+                    <button onclick="openDirectWhatsApp('${activeArt.nativeAd.whatsappMsg}')" class="btn-gold px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2 shrink-0">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>${activeArt.nativeAd.ctaText}</span>
+                    </button>
+                `;
+            }
+
+            viewer.innerHTML = `
+                <div class="space-y-3 border-b border-white/10 pb-6">
+                    <div class="flex flex-wrap items-center gap-3 text-xs">
+                        <span class="px-3 py-1 rounded-full bg-boltGreen text-oldGold font-bold uppercase tracking-wider">${activeArt.tag}</span>
+                        <span class="text-gray-400"><i class="fa-regular fa-clock mr-1"></i>${activeArt.readTime}</span>
+                        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check-double mr-1"></i>Acceso Gratuito</span>
+                    </div>
+                    <h2 class="font-serifElegant text-2xl sm:text-4xl font-bold text-white leading-tight">
+                        ${activeArt.title}
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base italic">
+                        "${activeArt.subtitle}"
+                    </p>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base">
+                    ${activeArt.contentTop}
+                </div>
+
+                <!-- BLOQUE DE AUTOPUBLICIDAD NATIVA PROPIA -->
+                <div class="my-6 p-6 rounded-2xl bg-gradient-to-r from-boltGreen/70 via-obsidian to-boltGreen/50 border-2 border-oldGold/70 shadow-xl space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded bg-oldGold text-obsidian">
+                            ${activeArt.nativeAd.badge}
+                        </span>
+                        <span class="font-serifTitle font-bold text-oldGold text-base">${activeArt.nativeAd.priceText}</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="space-y-1 max-w-xl">
+                            <h4 class="font-serifElegant text-lg sm:text-xl font-bold text-white">
+                                ${activeArt.nativeAd.headline}
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-200">
+                                ${activeArt.nativeAd.subtext}
+                            </p>
+                        </div>
+                        ${nativeAdActionHTML}
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base">
+                    ${activeArt.contentBottom}
+                </div>
+            `;
+        }
+
+        function copyArticleShareText() {
+            const activeArt = blogArticles[currentArticleIndex];
+            const shareText = `🔥 Les comparto este resumen clave: "${activeArt.title}" + esquemas de estudio y bancos de preguntas en AL 100 HUB: ${window.location.href}`;
+            copyToClipboardHelper(shareText);
+            const btnSpan = document.getElementById('copy-share-btn-text');
+            btnSpan.textContent = '¡Texto Copiado! Pégalo en WhatsApp o TikTok';
+            setTimeout(() => { btnSpan.textContent = 'Copiar Invitación para Grupos de Estudio'; }, 3000);
+        }
+
+        // --- 9. MODO DUEÑO: CALCULADORA YAMAHA BOLT & CONFIGURACIÓN ---
+        function initOwnerPanel() {
+            document.getElementById('owner-phone-input').value = ownerConfig.phone;
+            document.getElementById('owner-alias-input').value = ownerConfig.alias;
+            updateBoltSimulator();
+        }
+
+        function handleQRUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                ownerConfig.customQR = e.target.result;
+                localStorage.setItem('al100_owner_qr', ownerConfig.customQR);
+                saveOwnerConfig();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveOwnerConfig() {
+            const phoneVal = document.getElementById('owner-phone-input').value.trim();
+            const aliasVal = document.getElementById('owner-alias-input').value.trim();
+            if (phoneVal) {
+                ownerConfig.phone = phoneVal;
+                localStorage.setItem('al100_owner_phone', phoneVal);
+            }
+            if (aliasVal) {
+                ownerConfig.alias = aliasVal;
+                localStorage.setItem('al100_owner_alias', aliasVal);
+            }
+            const toast = document.getElementById('config-saved-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 4000);
+        }
+
+        function updateBoltSimulator() {
+            const boltPrice = 60000;
+            const downpayment = parseInt(document.getElementById('sim-downpayment').value) || 0;
+            const pdfCount = parseInt(document.getElementById('sim-pdfs').value) || 0;
+            const thesisCount = parseInt(document.getElementById('sim-thesis').value) || 0;
+            const agencyCount = parseInt(document.getElementById('sim-agency').value) || 0;
+
+            const pdfIncome = pdfCount * 38;
+            const thesisIncome = thesisCount * 500;
+            const agencyIncome = agencyCount * 650;
+            const totalMonthly = pdfIncome + thesisIncome + agencyIncome;
+
+            const remainingDebt = Math.max(0, boltPrice - downpayment);
+
+            document.getElementById('sim-downpayment-val').textContent = `${downpayment.toLocaleString('es-BO')} Bs`;
+            document.getElementById('sim-pdfs-val').textContent = `${pdfCount} descargas/mes (${pdfIncome.toLocaleString('es-BO')} Bs)`;
+            document.getElementById('sim-thesis-val').textContent = `${thesisCount} clientes/mes (${thesisIncome.toLocaleString('es-BO')} Bs)`;
+            document.getElementById('sim-agency-val').textContent = `${agencyCount} clientes/mes (${agencyIncome.toLocaleString('es-BO')} Bs)`;
+
+            document.getElementById('sim-total-monthly').textContent = `${totalMonthly.toLocaleString('es-BO')} Bs`;
+            document.getElementById('sim-remaining-debt').textContent = `${remainingDebt.toLocaleString('es-BO')} Bs`;
+
+            const estHours = Math.max(1, Math.round((thesisCount * 1.5) + (agencyCount * 2) + (pdfCount > 0 ? 1.5 : 0)));
+            document.getElementById('sim-hours-week').textContent = `~${estHours} hrs/semana apoyado con IA`;
+
+            const monthsEl = document.getElementById('sim-months-payoff');
+            const surplusEl = document.getElementById('sim-surplus-badge');
+
+            if (remainingDebt === 0) {
+                monthsEl.textContent = '¡Pagada al Contado!';
+                surplusEl.textContent = `100% de tus ${totalMonthly.toLocaleString('es-BO')} Bs/mes son ganancia libre`;
+            } else if (totalMonthly === 0) {
+                monthsEl.textContent = 'Ajusta tus metas';
+                surplusEl.textContent = 'Mueve los deslizadores para simular ingresos';
+            } else {
+                const months = (remainingDebt / totalMonthly).toFixed(1);
+                monthsEl.textContent = `${months} Meses`;
+                const diffFrom2500 = totalMonthly - 2500;
+                if (diffFrom2500 >= 0) {
+                    surplusEl.textContent = `Pagas cuota de 2.500 Bs + te sobran ${diffFrom2500.toLocaleString('es-BO')} Bs/mes`;
+                    surplusEl.className = 'text-[11px] text-emerald-400 font-semibold mt-1 block';
+                } else {
+                    surplusEl.textContent = `Faltan ${(2500 - totalMonthly).toLocaleString('es-BO')} Bs para la cuota ideal de 2.500 Bs`;
+                    surplusEl.className = 'text-[11px] text-amber-300 font-semibold mt-1 block';
+                }
+            }
+        }
+
+        // --- 10. COPIADOR DE PROMPTS IA Y DESCARGA HTML ---
+        function copyPromptText(promptId) {
+            const prompts = {
+                1: `Actúa como metodólogo e investigador biomédico senior. Tengo un cliente de asesoría científica con el siguiente tema: [ESCRIBIR TEMA Y CARRERA/HOSPITAL]. Redáctame de forma impecable: 1) Planteamiento del problema con contexto epidemiológico de Bolivia y Latinoamérica, 2) Pregunta PICO, 3) Objetivo General y 4 Específicos, 4) Tabla de operacionalización de variables, 5) Diseño metodológico y plan de análisis estadístico (Chi-cuadrado / p-valor), y 6) Estructura para referencias en formato Vancouver.`,
+                2: `Actúa como catedrático experto en ciencias básicas y clínicas. Toma este temario de [ESCRIBIR MATERIA Y TEMAS] y créame un Compendio Maestro de Estudio que incluya: 1) Tablas comparativas de mecanismos de acción, dianas moleculares y clínica, 2) Los 15 puntos que siempre preguntan en los exámenes parciales, y 3) Un banco de 40 preguntas trampa (opción múltiple y completación) con su clave de respuestas justificada.`,
+                3: `Créame en un solo archivo HTML completo y moderno un Catálogo Digital / Landing Page con botón de pedidos a WhatsApp y ventana de cobro Simple QR Bolivia para el negocio [NOMBRE DEL NEGOCIO], dedicado al rubro de [RUBRO: EJ. CONSULTORIO MÉDICO / TIENDA / EVENTOS], con estética elegante y conectado al número +591 [NÚMERO].`
+            };
+            copyToClipboardHelper(prompts[promptId]);
+            const banner = document.getElementById('prompt-copied-banner');
+            banner.classList.remove('hidden');
+            setTimeout(() => banner.classList.add('hidden'), 3500);
+        }
+
+        function copyToClipboardHelper(text) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+        }
+
+        function downloadStandaloneHTML() {
+            const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Inicialización al cargar la ventana
+        window.onload = function() {
+            renderStoreProducts('todos');
+            renderBlogSection();
+            initOwnerPanel();
+        };
+    </script>
+</body>
+</html>
